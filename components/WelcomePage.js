@@ -2,10 +2,10 @@ import React from "react";
 
 const WelcomePage = () => {
   return (
-    <div className="py-10 px-12 text-center md:px-16 bg-gradient-to-b from-rose-200 to-white">
-      <h1 className="font-bold text-6xl m-5">
-        Selamat Datang di{" "}
-        <span className="text-red-800">Juara Belajar Indonesia</span>!
+    <div className="py-10 px-12 text-center md:px-16 bg-gradient-to-b from-red-200 to-white">
+      <h1 className="font-bold text-4xl sm:text-6xl m-5">
+        Selamat Datang di
+        <span className="text-red-800"> Juara Belajar Indonesia</span>!
       </h1>
       <p className="text-justify">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem ullam
@@ -17,7 +17,7 @@ const WelcomePage = () => {
       </p>
       <div className="flex justify-center mt-10">
         <a href="#kursus">
-          <button className="bg-red-600 hover:bg-red-900 px-5 py-2 rounded-md">
+          <button className="bg-red-600 hover:bg-red-900 px-5 py-2 rounded-full">
             <p className="text-white">Get Started</p>
           </button>
         </a>

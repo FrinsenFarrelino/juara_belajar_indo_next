@@ -30,7 +30,7 @@ const Ulasan = () => {
                     </p>
                     <div className="flex items-center mt-4 space-x-4">
                       <img
-                        src="https://source.unsplash.com/50x50/?portrait?1"
+                        src="https://source.unsplash.com/50x50/?portrait?2"
                         alt=""
                         className="w-12 h-12 bg-center bg-cover rounded-full dark:bg-gray-500"
                       />
@@ -76,7 +76,7 @@ const Ulasan = () => {
                     </p>
                     <div className="flex items-center mt-4 space-x-4">
                       <img
-                        src="https://source.unsplash.com/50x50/?portrait?3"
+                        src="https://source.unsplash.com/50x50/?portrait?2"
                         alt=""
                         className="w-12 h-12 bg-center bg-cover rounded-full dark:bg-gray-500"
                       />
@@ -101,7 +101,7 @@ const Ulasan = () => {
                     </p>
                     <div className="flex items-center mt-4 space-x-4">
                       <img
-                        src="https://source.unsplash.com/50x50/?portrait?4"
+                        src="https://source.unsplash.com/50x50/?portrait?2"
                         alt=""
                         className="w-12 h-12 bg-center bg-cover rounded-full dark:bg-gray-500"
                       />

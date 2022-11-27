@@ -11,42 +11,54 @@ const Kursus = () => {
           <div className="flex flex-col items-center">
             <h1 className="text-xl font-semibold">Paket 1</h1>
             <img src="/logo192.png" alt="" width={80} className="py-4" />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p className="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
           </div>
         </div>
         <div className="w-52 h-64 bg-slate-50 rounded-lg shadow-2xl p-7 m-8">
           <div className="flex flex-col items-center">
             <h1 className="text-xl font-semibold">Paket 2</h1>
             <img src="/logo192.png" alt="" width={80} className="py-4" />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p className="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
           </div>
         </div>
         <div className="w-52 h-64 bg-slate-50 rounded-lg shadow-2xl p-7 m-8">
           <div className="flex flex-col items-center">
             <h1 className="text-xl font-semibold">Paket 3</h1>
             <img src="/logo192.png" alt="" width={80} className="py-4" />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p className="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
           </div>
         </div>
         <div className="w-52 h-64 bg-slate-50 rounded-lg shadow-2xl p-7 m-8">
           <div className="flex flex-col items-center">
             <h1 className="text-xl font-semibold">Paket 4</h1>
             <img src="/logo192.png" alt="" width={80} className="py-4" />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p className="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
           </div>
         </div>
         <div className="w-52 h-64 bg-slate-50 rounded-lg shadow-2xl p-7 m-8">
           <div className="flex flex-col items-center">
             <h1 className="text-xl font-semibold">Paket 5</h1>
             <img src="/logo192.png" alt="" width={80} className="py-4" />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p className="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
           </div>
         </div>
         <div className="w-52 h-64 bg-slate-50 rounded-lg shadow-2xl p-7 m-8">
           <div className="flex flex-col items-center">
             <h1 className="text-xl font-semibold">Paket 6</h1>
             <img src="/logo192.png" alt="" width={80} className="py-4" />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p className="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
           </div>
         </div>
       </div>

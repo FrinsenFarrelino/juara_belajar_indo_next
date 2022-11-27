@@ -8,6 +8,7 @@ import TentangKami from "../components/TentangKami";
 import Ulasan from "../components/Ulasan";
 import WelcomePage from "../components/WelcomePage";
 import styles from "../styles/Home.module.css";
+import Whatsapp from "../components/Whatsapp";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <WelcomePage />
       <TentangKami />
       <Kursus />
+      <Whatsapp />
       <Ulasan />
       <Faq />
       <Footer />
