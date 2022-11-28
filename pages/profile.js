@@ -2,7 +2,7 @@ import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import styles from "../styles/Home.module.css";
-import { initFirebase } from "../config/firebaseConfig";
+import { initFirebase, storage } from "../config/firebaseConfig";
 import {
   getAuth,
   onAuthStateChanged,
@@ -10,12 +10,14 @@ import {
   updateProfile,
   updatePassword,
 } from "firebase/auth";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useRouter } from "next/router";
 
 initFirebase;
 const auth = getAuth();
 
 const Profile = () => {
+  const [imageUpload, setImageUpload] = useState(null);
   const [active, setActive] = useState(false);
   const [loadingReset, setLoadingReset] = useState(false);
   const [loadingUpdate, setLoadingUpdate] = useState(false);
@@ -82,6 +84,12 @@ const Profile = () => {
     try {
       await updateEmail(auth.currentUser, email);
       await updateProfile(auth.currentUser, { displayName: displayName });
+      if (imageUpload != null) {
+        const imageRef = ref(storage, `userImage/${auth.currentUser.email}`);
+        await uploadBytes(imageRef, imageUpload);
+        const url = await getDownloadURL(imageRef);
+        await updateProfile(auth.currentUser, { photoURL: url });
+      }
       setUpdateProfileSuccessNotification(true);
       setUpdateProfileNotification("Berhasil mengubah profil");
       setEmail(auth.currentUser.email);
@@ -111,14 +119,25 @@ const Profile = () => {
           <form onSubmit={handleUpdateProfile}>
             <div className="flex flex-col justify-center items-center md:flex-row md:justify-center">
               <div className="md:mx-10">
-                <div className="flex flex-col justify-center">
+                <div className="flex flex-col justify-center items-center">
                   <img
                     src={displayImage}
                     alt=""
-                    width={200}
-                    className="rounded-full mb-3 sm:mb-0"
+                    className="w-[200px] h-[200px] rounded-full mb-3 sm:mb-0 object-cover"
                   />
-                  {active ? <input type="file" className="mt-3" /> : <></>}
+                  {active ? (
+                    <div className="flex justify-center mb-7 md:mb-0 w-[205px]">
+                      <input
+                        type="file"
+                        className="mt-3"
+                        onChange={(event) => {
+                          setImageUpload(event.target.files[0]);
+                        }}
+                      />
+                    </div>
+                  ) : (
+                    <></>
+                  )}
                 </div>
               </div>
               <div className="w-5/6 sm:w-1/3 flex flex-col justify-center items-center">
@@ -173,23 +192,23 @@ const Profile = () => {
               </div>
             </div>
             <div className="w-full mt-10 flex justify-between sm:justify-center">
-              <div>
-                {active ? (
+              {active ? (
+                <div>
                   <button
                     type="submit"
                     className="w-36 bg-green-600 text-white hover:bg-green-700 mx-2 px-4 py-3 rounded-full"
                   >
                     {loadingUpdate ? "Loading..." : "Save Profile"}
                   </button>
-                ) : (
-                  <></>
-                )}
-              </div>
+                </div>
+              ) : (
+                <></>
+              )}
               <div>
                 {!active && !resetPassword ? (
                   <button
                     onClick={() => setActive(!active)}
-                    className="w-36 bg-green-600 text-white hover:bg-green-700 mx-2 px-4 py-3 rounded-full"
+                    className="w-36 bg-green-600 text-white hover:bg-green-700 mx-2 px-2 py-3 rounded-full"
                   >
                     Edit Profile
                   </button>
@@ -202,7 +221,7 @@ const Profile = () => {
                   <div>
                     <button
                       onClick={() => setResetPassword(true)}
-                      className="w-36 bg-red-600 text-white hover:bg-red-700 mx-2 px-4 py-3 rounded-full"
+                      className="w-36 bg-red-600 text-white hover:bg-red-700 mx-2 px-2 py-3 rounded-full"
                     >
                       Reset Password
                     </button>

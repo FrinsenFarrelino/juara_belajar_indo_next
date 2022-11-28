@@ -27,7 +27,7 @@ const Navbar = () => {
         setSignedIn(false);
       }
     });
-  }, []);
+  });
 
   const handleSignOut = () => {
     signOut(auth)
