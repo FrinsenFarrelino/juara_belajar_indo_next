@@ -19,7 +19,7 @@ const ForgotPassword = () => {
     setTimeout(() => {
       setError(false);
       setComplete(false);
-    }, 3000);
+    }, 10000);
   }, [error, complete]);
 
   const handlePasswordReset = async (event) => {
@@ -86,7 +86,8 @@ const ForgotPassword = () => {
               >
                 <strong className="font-bold">Success! </strong>
                 <span className="block sm:inline">
-                  Email verifikasi telah dikirim
+                  Reset password telah dikirim ke email anda! silahkan cek inbox
+                  / spam
                 </span>
                 <span
                   className="absolute top-0 bottom-0 right-0 px-4 py-3"
