@@ -30,7 +30,7 @@ const Ulasan = () => {
                     </p>
                     <div className="flex items-center mt-4 space-x-4">
                       <img
-                        src="https://source.unsplash.com/50x50/?portrait?2"
+                        src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
                         alt=""
                         className="w-12 h-12 bg-center bg-cover rounded-full dark:bg-gray-500"
                       />
@@ -51,7 +51,7 @@ const Ulasan = () => {
                     </p>
                     <div className="flex items-center mt-4 space-x-4">
                       <img
-                        src="https://source.unsplash.com/50x50/?portrait?2"
+                        src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
                         alt=""
                         className="w-12 h-12 bg-center bg-cover rounded-full dark:bg-gray-500"
                       />
@@ -76,7 +76,7 @@ const Ulasan = () => {
                     </p>
                     <div className="flex items-center mt-4 space-x-4">
                       <img
-                        src="https://source.unsplash.com/50x50/?portrait?2"
+                        src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
                         alt=""
                         className="w-12 h-12 bg-center bg-cover rounded-full dark:bg-gray-500"
                       />
@@ -101,7 +101,7 @@ const Ulasan = () => {
                     </p>
                     <div className="flex items-center mt-4 space-x-4">
                       <img
-                        src="https://source.unsplash.com/50x50/?portrait?2"
+                        src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
                         alt=""
                         className="w-12 h-12 bg-center bg-cover rounded-full dark:bg-gray-500"
                       />

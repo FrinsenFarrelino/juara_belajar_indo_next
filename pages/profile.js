@@ -7,6 +7,7 @@ import {
   getAuth,
   onAuthStateChanged,
   updateEmail,
+  updateProfile,
   updatePassword,
 } from "firebase/auth";
 import { useRouter } from "next/router";
@@ -47,7 +48,11 @@ const Profile = () => {
       setUpdateProfileSuccessNotification(false);
       setUpdateProfileErrorNotification(false);
     }, 3000);
-  }, [updateProfileSuccessNotification, updateProfileErrorNotification]);
+  }, [
+    onAuthStateChanged,
+    updateProfileSuccessNotification,
+    updateProfileErrorNotification,
+  ]);
 
   const handleResetPassword = async (event) => {
     setLoadingReset(true);
@@ -74,20 +79,18 @@ const Profile = () => {
     setLoadingUpdate(true);
     event.preventDefault();
 
-    const newEmail = event.target.email.value;
-    const newDisplayName = event.target.name.value;
-
-    updateEmail(auth.currentUser, newEmail)
-      .then(() => {
-        console.log("Email successfully updated");
-        setUpdateProfileSuccessNotification(true);
-        setUpdateProfileNotification("Berhasil mengubah email");
-        setEmail(auth.currentUser.email);
-      })
-      .catch((error) => {
-        setUpdateProfileErrorNotification(true);
-        setUpdateProfileNotification("Gagal mengubah email");
-      });
+    try {
+      await updateEmail(auth.currentUser, email);
+      await updateProfile(auth.currentUser, { displayName: displayName });
+      setUpdateProfileSuccessNotification(true);
+      setUpdateProfileNotification("Berhasil mengubah profil");
+      setEmail(auth.currentUser.email);
+      setDisplayName(auth.currentUser.displayName);
+      setActive(false);
+    } catch (error) {
+      setUpdateProfileErrorNotification(true);
+      setUpdateProfileNotification("Gagal mengubah profil");
+    }
 
     setLoadingUpdate(false);
   };
@@ -115,13 +118,7 @@ const Profile = () => {
                     width={200}
                     className="rounded-full mb-3 sm:mb-0"
                   />
-                  {active ? (
-                    <button className="mt-3 text-blue-600 underline underline-offset-3">
-                      Upload Foto
-                    </button>
-                  ) : (
-                    <></>
-                  )}
+                  {active ? <input type="file" className="mt-3" /> : <></>}
                 </div>
               </div>
               <div className="w-5/6 sm:w-1/3 flex flex-col justify-center items-center">
@@ -142,6 +139,7 @@ const Profile = () => {
                             type="name"
                             value={displayName}
                             name="name"
+                            onChange={(e) => setDisplayName(e.target.value)}
                           />
                         )}
                       </div>
@@ -165,6 +163,7 @@ const Profile = () => {
                             type="text"
                             value={email}
                             name="email"
+                            onChange={(e) => setEmail(e.target.value)}
                           />
                         )}
                       </div>
@@ -182,7 +181,12 @@ const Profile = () => {
                   >
                     {loadingUpdate ? "Loading..." : "Save Profile"}
                   </button>
-                ) : !resetPassword ? (
+                ) : (
+                  <></>
+                )}
+              </div>
+              <div>
+                {!active && !resetPassword ? (
                   <button
                     onClick={() => setActive(!active)}
                     className="w-36 bg-green-600 text-white hover:bg-green-700 mx-2 px-4 py-3 rounded-full"
