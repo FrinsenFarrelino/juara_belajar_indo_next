@@ -27,6 +27,7 @@ const Whatsapp = () => {
               <a
                 href="https://wa.me/62895419655533"
                 target="_blank"
+                rel="noreferrer"
                 className="px-6 py-3 bg-green-600 text-white rounded-full"
               >
                 Chat Sekarang
