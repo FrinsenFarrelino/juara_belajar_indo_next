@@ -5,7 +5,7 @@ const WelcomePage = () => {
     <div className="py-10 px-12 text-center md:px-16 bg-gradient-to-b from-red-200 to-white">
       <h1 className="font-bold text-4xl sm:text-6xl m-5">
         Selamat Datang di
-        <span className="text-red-800"> Juara Belajar Indonesia</span>!
+        <span className="text-red-700"> Juara Belajar Indonesia</span>!
       </h1>
       <p className="text-justify">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem ullam

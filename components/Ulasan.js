@@ -8,7 +8,7 @@ const Ulasan = () => {
           <div className="grid items-center gap-4 xl:grid-cols-5">
             <div className="max-w-2xl mx-auto my-8 space-y-4 text-center xl:col-span-2 xl:text-left">
               <h2 className="text-4xl font-bold">
-                Apa Kata <span className="text-red-800">Mereka</span>
+                Apa Kata <span className="text-red-700">Mereka</span>
               </h2>
               <p className="dark:text-gray-800">
                 Pri ex magna scaevola moderatius. Nullam accommodare no vix, est

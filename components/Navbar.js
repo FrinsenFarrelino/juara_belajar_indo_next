@@ -41,14 +41,14 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-red-900 sticky top-0">
+      <nav className="bg-red-700 sticky top-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 {" "}
                 <Link
-                  href="/#"
+                  href="/"
                   className="flex items-center"
                   onClick={() => setIsOpen(false)}
                 >
@@ -238,7 +238,7 @@ const Navbar = () => {
                   setIsProfileOpen(false);
                 }}
                 type="button"
-                className="bg-red-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                className="bg-red-700 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
               >

@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="p-4 sm:p-6 bg-red-900">
+    <footer className="p-4 sm:p-6 bg-red-700">
       <div className="flex justify-center">
         <div className="mb-6 md:mb-0 flex">
           <a href="#" className="flex items-center">
@@ -13,7 +13,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <hr className="my-6 sm:mx-auto border-red-700 lg:my-8" />
+      <hr className="my-6 sm:mx-auto border-red-500 lg:my-8" />
       <div className="sm:flex text-center justify-center sm:items-center sm:justify-between">
         <span className="text-sm text-gray-200">
           © 2022{" "}
