@@ -22,7 +22,6 @@ const Login = () => {
 
   const handleSignIn = async (event) => {
     setLoading(true);
-    
     // Stop the form from submitting and refreshing the page.
     event.preventDefault();
 
