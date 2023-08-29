@@ -41,7 +41,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-red-700 sticky top-0">
+      <nav className="bg-silver-700 sticky top-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -53,19 +53,19 @@ const Navbar = () => {
                   onClick={() => setIsOpen(false)}
                 >
                   <img
-                    src="/logo192.png"
+                    src="/rs.png"
                     className="mr-3 h-6 sm:h-9"
-                    alt="Juara Belajar Indo Logo"
+                    alt="Logo Akreditasi"
                   />
-                  <span className="self-center text-sm sm:text-xl font-semibold whitespace-nowrap text-white">
-                    Juara Belajar Indonesia
+                  <span className="self-center text-sm sm:text-xl font-semibold whitespace-nowrap text-black">
+                    RSUD Koesma Tuban
                   </span>
                 </Link>
               </div>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-center space-x-4">
-                <Link
+                {/* <Link
                   href="/#about"
                   className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
@@ -79,12 +79,12 @@ const Navbar = () => {
                   Kursus
                 </Link>
 
-                {/* <Link
+                <Link
                   href="/#blog"
                   className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Blog
-                </Link> */}
+                </Link>
 
                 <Link
                   href="/#ulasan"
@@ -98,7 +98,7 @@ const Navbar = () => {
                   className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   FAQ
-                </Link>
+                </Link> */}
                 {signedIn ? (
                   <div className="px-3 py-2">
                     <button
@@ -168,6 +168,7 @@ const Navbar = () => {
                       Daftar
                     </Link>
                   </>
+                  
                 )}
               </div>
             </div>
